@@ -25,6 +25,13 @@ This program predicts stock prices using machine learning models (Random Forest,
 #### FRED API:
 1. Register for an account at FRED (https://fred.stlouisfed.org).
 2. Generate your API key.
+## Inserting API Keys
+1. Alpha Vantage: Replace YOUR_ALPHA_VANTAGE_API_KEY in the code with your actual API key
+   - Line 28
+   - Line 300
+   - Line 303
+2. FRED: Replace YOUR_FRED_API_KEY in the code with your FRED API key
+   - Line 49
 ## Program Details
 ### Data Sources
 - Stock Data: Alpha Vantage's TIME_SERIES_DAILY endpoint provides daily stock prices, including open, high, low, close, and volume.
