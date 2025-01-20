@@ -21,11 +21,9 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 tf.config.run_functions_eagerly(True)
 ssl._create_default_https_context = ssl._create_unverified_context
 
-# QVKYT4BJ7903SJXV
-
 def fetch_stock_data(ticker):
     """Fetch stock data from Alpha Vantage API"""
-    api_key = 'QVKYT4BJ7903SJXV'
+    api_key = 'your_api_key'
     url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={ticker}&apikey={api_key}&outputsize=full'
     r = requests.get(url)
     data = r.json()
@@ -42,11 +40,9 @@ def fetch_stock_data(ticker):
     df.sort_index(inplace=True)
     return df
 
-# b21ce6567289b6d5c0d8d6d998f0b4da
-
 def fetch_fred_data(stock_data):
     """Fetch macroeconomic data aligned with stock data date range."""
-    fred = Fred(api_key='b21ce6567289b6d5c0d8d6d998f0b4da')
+    fred = Fred(api_key='your_api_key')
     # Expand the date range to ensure sufficient overlap
     start_date = stock_data.index.min() - pd.DateOffset(years=1)
     end_date = stock_data.index.max() + pd.DateOffset(years=1)
@@ -297,10 +293,10 @@ if st.button("Fetch and Analyze Data"):
         df = preprocess_data(df_stock, df_macro)
 
         # Fetch company overview data
-        company_financials = fetch_company_overview(ticker, api_key = "QVKYT4BJ7903SJXV")
+        company_financials = fetch_company_overview(ticker, api_key = "your_api_key")
 
         # Fetch sentiment score
-        sentiment_score = fetch_market_sentiment(ticker, api_key = "QVKYT4BJ7903SJXV")
+        sentiment_score = fetch_market_sentiment(ticker, api_key = "your_api_key")
 
         if len(df) < 50:  # Set a reasonable minimum
             st.error("Insufficient data for training. Try expanding the date range.")
