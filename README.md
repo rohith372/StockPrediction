@@ -50,3 +50,11 @@ Using the free tier of Alpha Vantage will allow you to call their API 25 times a
 ## Acknowledgments
 - Alpha Vantage for stock and sentiment data.
 - FRED API for macroeconomic indicators.
+## ⚠️ Disclaimer: Not Financial Advice
+This project is for educational and informational purposes only. It is designed to demonstrate the use of machine learning models, data analysis, and APIs for forecasting stock prices.
+
+This program does not constitute financial advice, investment recommendations, or a solicitation to buy, sell, or hold any financial securities. The models and predictions provided by this project are based on historical data and should not be relied upon for making investment decisions.
+
+Stock market investments carry risks, including the potential loss of principal. Always do your own research and consult with a certified financial advisor or investment professional before making any financial decisions.
+
+The author of this project assume no responsibility or liability for any losses incurred through the use of this software.
