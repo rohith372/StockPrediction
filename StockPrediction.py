@@ -23,7 +23,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 def fetch_stock_data(ticker):
     """Fetch stock data from Alpha Vantage API"""
-    api_key = 'your_api_key'
+    api_key = 'YOUR_ALPHA_VANTAGE_API_KEY'
     url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={ticker}&apikey={api_key}&outputsize=full'
     r = requests.get(url)
     data = r.json()
@@ -42,7 +42,7 @@ def fetch_stock_data(ticker):
 
 def fetch_fred_data(stock_data):
     """Fetch macroeconomic data aligned with stock data date range."""
-    fred = Fred(api_key='your_api_key')
+    fred = Fred(api_key='YOUR_FRED_API_KEY')
     # Expand the date range to ensure sufficient overlap
     start_date = stock_data.index.min() - pd.DateOffset(years=1)
     end_date = stock_data.index.max() + pd.DateOffset(years=1)
@@ -293,10 +293,10 @@ if st.button("Fetch and Analyze Data"):
         df = preprocess_data(df_stock, df_macro)
 
         # Fetch company overview data
-        company_financials = fetch_company_overview(ticker, api_key = "your_api_key")
+        company_financials = fetch_company_overview(ticker, api_key = "YOUR_ALPHA_VANTAGE_API_KEY")
 
         # Fetch sentiment score
-        sentiment_score = fetch_market_sentiment(ticker, api_key = "your_api_key")
+        sentiment_score = fetch_market_sentiment(ticker, api_key = "YOUR_ALPHA_VANTAGE_API_KEY")
 
         if len(df) < 50:  # Set a reasonable minimum
             st.error("Insufficient data for training. Try expanding the date range.")
