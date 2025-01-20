@@ -3,7 +3,7 @@ import pandas as pd
 
 def fetch_stock_data():
     """Fetch stock data from Alpha Vantage API"""
-    url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=QVKYT4BJ7903SJXV'
+    url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=your_api_key'
     r = requests.get(url)
     data = r.json()
     time_series = data.get('Time Series (Daily)', {})
