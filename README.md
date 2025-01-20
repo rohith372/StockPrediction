@@ -45,6 +45,8 @@ This program predicts stock prices using machine learning models (Random Forest,
 #### Forecasting:
 - Features for forecasting include user-defined interest rates, GDP growth, inflation, sentiment score, and financial metrics.
 - The program rolls forward predictions for a user-specified number of days.
+## Important Note
+Using the free tier of Alpha Vantage will allow you to call their API 25 times a day. If you are getting an error in your code and you are not sure why it is happening, it is likely that you exceeded that number. Run test.py in your terminal, and it will return a message saying you exceeded your limit. You do not have to wait 24 hours again to run the code.
 ## Acknowledgments
 - Alpha Vantage for stock and sentiment data.
 - FRED API for macroeconomic indicators.
