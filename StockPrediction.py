@@ -340,6 +340,16 @@ if st.button("Fetch and Analyze Data"):
         xgb_model, xgb_pred, xgb_mse, xgb_r2 = train_xgboost(X_train, y_train, X_test, y_test)
         st.session_state['xgb_model'] = xgb_model
 
+        # Random Forest Feature Importance
+        feature_importances = rf_model.feature_importances_
+        importance_df = pd.DataFrame({
+            'Feature': features,
+            'Importance': feature_importances
+        }).sort_values(by='Importance', ascending=False)
+
+        st.subheader("Feature Importance")
+        st.bar_chart(importance_df.set_index('Feature'))
+
         # Filter the test data for the last year
         test_start_index = int(len(df) * 0.7)  # Assuming a 70-30 train-test split
         test_index = df.index[test_start_index:]  # Indices corresponding to the test set
